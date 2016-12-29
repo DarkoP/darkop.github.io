@@ -1,0 +1,15 @@
+# Site Settings
+title: Darko P
+email: darko.pervan@gmail.com
+description: >
+  My Page
+baseurl: "/home"
+url: "http://darkop.github.io"
+twitter_username: #
+github_username:  darkop
+# Build Settings
+sass:
+  sass_dir: _sass
+include: ['_pages']
+kramdown:
+  input: GFM
