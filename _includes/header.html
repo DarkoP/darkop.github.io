@@ -1,18 +1,17 @@
-<aside>
-	<div class="container">
-		<nav>
-			<ul>
-				{% for page in site.pages %} {% if page.title %}
-				<li><a href="{{ page.url | prepend: site.baseurl }}">{{ page.title }}</a></li>
-				{% endif %} {% endfor %}
-				<li><a href="{{ "/blog" | prepend: site.baseurl }}">Blog</a></li>
-			</ul>
-			</li>
-			</ul>
-		</nav>
-	</div>
-</aside>
-
 <header>
-	<h1><a href="{{ site.baseurl }}">{{ site.title }}</a></h1>
+    <nav>
+        <div class="nav-wrapper">
+            <div class="container"><a href="#" data-activates="nav-bar" class="button-collapse"><i class="material-icons">menu</i></a></div>
+            <ul class="right hide-on-med-and-down ">
+                {% for link in site.navigation %}
+                {% if page.url == link.url %}<li class="active">{% else %}<li>{% endif %}<a href="{{ link.url | prepend: site.baseurl }}">{{ link.text }}</a></li>
+                {% endfor %}
+            </ul>
+            <ul class="side-nav" id="nav-bar">
+                {% for link in site.navigation %}
+                {% if page.url == link.url %}<li class="active">{% else %}<li>{% endif %}<a href="{{ link.url | prepend: site.baseurl }}">{{ link.text }}</a></li>
+                {% endfor %}
+            </ul>
+        </div>
+    </nav>
 </header>
